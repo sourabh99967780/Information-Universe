@@ -10,7 +10,7 @@ var gnodMap;
 
 function get_data(qqq) {
     $.ajax({
-        url: "http://localhost:3000/get-data",
+        url: "/get-data",
         method: "post",
         async: false,
         data: {
