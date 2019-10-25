@@ -1,6 +1,14 @@
 const express = require('express')
 const app = express()
-const port = 3000
+// const port = 3000
+
+var server=app.listen(process.env.PORT || 3000, listen)
+function listen() {
+    var host = server.address().address;
+    var port = server.address().port;
+    console.log('app listening at http://' + host + ':' + port);
+}
+// app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 var bodyParser = require('body-parser')
 // app.use(bodyParser.json()); // to support JSON-encoded bodies
@@ -44,7 +52,6 @@ app.post('/get-data', function (req, res) {
 
 // app.get('/', (req, res) => res.send('Hello World!'))
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 
 
