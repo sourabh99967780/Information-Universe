@@ -83,9 +83,15 @@ function magic(text, link = false) {
         return rp(url).then(function (html) {
                 //success!
                 // console.log("aaaaaaaaaaa")
-
+                // var rem=$('.reflist',html).remove();
+                // rem=$('.refbegin',rem).remove();
+                // rem=$('.catlinks',rem).remove();
                 const a_elements = $('#content a', html);
                 var list = [];
+                // const yy = $('#content .reflist a', html);
+                // const zz = $('#content .refbegin a', html);
+                // console.log(yy,zz);
+                var not_required_list=[]
 
                 for (let i = 0; i < a_elements.length; i++) {
                     var title = a_elements[i].attribs.title;
@@ -98,7 +104,7 @@ function magic(text, link = false) {
                         continue;
                     }
 
-                    if (title.includes("wikipedia")) {
+                    if (title.toLowerCase().includes("wikipedia")|| title.toLowerCase().includes("edit")|| title.toLowerCase().includes("oclc")) {
                         continue;
                     }
 
@@ -106,7 +112,7 @@ function magic(text, link = false) {
                         continue;
                     }
 
-                    if (link.includes(".jpg") || link.includes(".png") || link.includes(".exe")) {
+                    if (link.toLowerCase().includes(".jpg") || link.toLowerCase().includes(".png") || link.toLowerCase().includes(".gif")) {
                         continue;
                     }
 
@@ -139,14 +145,14 @@ function magic(text, link = false) {
                 // console.log(b[j].count)
                 // }
                 // result["links"] = list
-                list = list.slice(0, 20)
+                list = list.slice(0, 30)
                 list.unshift({
                     link: url,
                     title: text,
                     count: -1
                 })
                 links = list
-                // console.log(links)
+                console.log(list)
                 // console.log(result['links'])
 
 
