@@ -27,8 +27,8 @@ app.use('/static', express.static('public'))
 
 
 app.post('/get-data', function (req, res) {
-    console.log("********************************************************************")
-    console.log("********************************************************************\n\n\n")
+    // console.log("********************************************************************")
+    console.log("********************************************************************\n")
     console.log(req.body)
     var res2 = magic(unescape(req.body.query), req.body.link).then(function () {
         // console.log(links,extract)
@@ -45,8 +45,8 @@ app.post('/get-data', function (req, res) {
 
     })
 
-    console.log("\n\n\n********************************************************************")
-    console.log("********************************************************************")
+    console.log("\n********************************************************************")
+    // console.log("********************************************************************")
 });
 
 
@@ -152,7 +152,7 @@ function magic(text, link = false) {
                     count: -1
                 })
                 links = list
-                console.log(list)
+                // console.log(list)
                 // console.log(result['links'])
 
 
