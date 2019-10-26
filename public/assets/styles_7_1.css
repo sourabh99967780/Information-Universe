@@ -630,11 +630,11 @@ dropdown-menu.pull-right {
 
 #f
 {
- border: 0;
- position: absolute;
+ /* border: 0; */
+ /* position: absolute; */
  left: 0px;
- top: 0px;
- width: 410px;
+ /* top: 0px; */
+ width: 211px;
  height: 51px;
  background: transparent;
  font-size: 30px;
@@ -648,13 +648,14 @@ dropdown-menu.pull-right {
 .search
 {
  border: 0;
- margin-top: 0;
+ /* margin-top: 0; */
  font-size: 18px;
  display: block;
+ top: 0px;
  position: relative;
  background: transparent;
- padding-left: 0.75em;
- padding-right: 6.5em;
+ /* padding-left: 0.75em; */
+ /* padding-right: 6.5em; */
 }
 
 .map_info
